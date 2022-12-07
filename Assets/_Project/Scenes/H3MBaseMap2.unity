@@ -1015,7 +1015,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191187696}
-  - component: {fileID: 191187699}
   - component: {fileID: 191187700}
   - component: {fileID: 191187698}
   - component: {fileID: 191187697}
@@ -1070,35 +1069,6 @@ MonoBehaviour:
   Settings:
     LineMaterial: {fileID: 2100000, guid: 697c3d00ed75e4c388f1112e6817fa65, type: 2}
     TextureOffsetFactor: -4
---- !u!114 &191187699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191187695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b127c2bd022164116959cdf067a64c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MapboxToken: pk.eyJ1IjoiZG1iZm0iLCJhIjoiY2tyYW9hdGMwNGt6dTJ2bzhieDg3NGJxNyJ9.qaQsMUbyu4iARFe0XB2SWg
-  ARSession: {fileID: 168167782}
-  ARSessionOrigin: {fileID: 138905975}
-  RouteContainer: {fileID: 955660337}
-  Camera: {fileID: 1217169228}
-  MapboxMapCamera: {fileID: 1812803367}
-  MapboxRoute: {fileID: 431329718}
-  RoutePathRenderer: {fileID: 191187697}
-  NextTargetPathRenderer: {fileID: 191187698}
-  RenderTexture: {fileID: 8400000, guid: f3cd5103645304a6da460eb8329221e4, type: 2}
-  Map: {fileID: 1068750569}
-  MapSize: 420
-  DirectionsFactory: {fileID: 2146568893}
-  MinimapLayer: 6
-  MinimapLineMaterial: {fileID: 2100000, guid: 5a66f28d8726243dba9094b33505fec6, type: 2}
-  BaseLineWidth: 2
-  MinimapStepSize: 0.75
 --- !u!114 &191187700
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -72,56 +72,7 @@ namespace ARLocation.MapboxRoutes.SampleProject
 
         private State s = new State();
 
-        private GUIStyle _textStyle;
-        GUIStyle textStyle()
-        {
-            if (_textStyle == null)
-            {
-                _textStyle = new GUIStyle(GUI.skin.label);
-                _textStyle.fontSize = 48;
-                _textStyle.fontStyle = FontStyle.Bold;
-            }
-
-            return _textStyle;
-        }
-
-        private GUIStyle _textFieldStyle;
-        GUIStyle textFieldStyle()
-        {
-            if (_textFieldStyle == null)
-            {
-                _textFieldStyle = new GUIStyle(GUI.skin.textField);
-                _textFieldStyle.fontSize = 48;
-            }
-            return _textFieldStyle;
-        }
-
-        private GUIStyle _errorLabelStyle;
-        GUIStyle errorLabelSytle()
-        {
-            if (_errorLabelStyle == null)
-            {
-                _errorLabelStyle = new GUIStyle(GUI.skin.label);
-                _errorLabelStyle.fontSize = 24;
-                _errorLabelStyle.fontStyle = FontStyle.Bold;
-                _errorLabelStyle.normal.textColor = Color.red;
-            }
-
-            return _errorLabelStyle;
-        }
-
-
-        private GUIStyle _buttonStyle;
-        GUIStyle buttonStyle()
-        {
-            if (_buttonStyle == null)
-            {
-                _buttonStyle = new GUIStyle(GUI.skin.button);
-                _buttonStyle.fontSize = 48;
-            }
-
-            return _buttonStyle;
-        }
+       
 
         void Awake()
         {
