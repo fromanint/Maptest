@@ -9,8 +9,8 @@ public class GetTestMapBeacons : MonoBehaviour
 {
 
     public AbstractMap _map;
-   
 
+    public MapController mapController;
     public Transform beaconsParent;
 
     public UpdateBeaconLocation markerPrefab;
@@ -54,7 +54,7 @@ public class GetTestMapBeacons : MonoBehaviour
             beacon.transform.parent = beaconsParent;
             beacon._spawnScale = beaconsSize;
             beacon.gameObject.name = "Beacon " + i;
-
+            beacon.controller = mapController;
             beacon._map = _map;
             
 

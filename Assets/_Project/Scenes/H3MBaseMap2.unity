@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _map: {fileID: 1068750569}
+  mapController: {fileID: 191187700}
   beaconsParent: {fileID: 30947789}
   markerPrefab: {fileID: 8156743092069776148, guid: d96085b6c2f074547a962165b86ff4fb, type: 3}
   markers: []

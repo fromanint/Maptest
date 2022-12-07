@@ -3,6 +3,7 @@ using UnityEngine;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
 using ARLocation;
+using ARLocation.MapboxRoutes.SampleProject;
 
 
 
@@ -12,7 +13,10 @@ public class UpdateBeaconLocation : MonoBehaviour
 
 
     public AbstractMap _map;
-    //public MenuH3MBaseMap menuController;
+   // public ARLocation.MapboxRoutes.SampleProject.MAp controller;
+
+    public MapController controller;
+
 
 
 
@@ -41,6 +45,7 @@ public class UpdateBeaconLocation : MonoBehaviour
         
         Location newLoc = new Location(location.x,location.y);
         //menuController.StartRoute(newLoc);
+        controller.StartRoute(newLoc);
             
     }
 
