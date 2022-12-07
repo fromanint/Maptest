@@ -9,7 +9,7 @@ public class GetTestMapBeacons : MonoBehaviour
 {
 
     public AbstractMap _map;
-    public MenuH3MBaseMap menu;
+   
 
     public Transform beaconsParent;
 
@@ -56,7 +56,7 @@ public class GetTestMapBeacons : MonoBehaviour
             beacon.gameObject.name = "Beacon " + i;
 
             beacon._map = _map;
-            beacon.menuController = menu;
+            
 
         }
 

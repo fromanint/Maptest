@@ -41,7 +41,7 @@ public class EnableDisableColorBtn : MonoBehaviour
         }
     }
 
-    public void SecActiveColor()
+    public void SecondaryActiveColor()
     {
         foreach (Image i in images)
         {
@@ -53,7 +53,7 @@ public class EnableDisableColorBtn : MonoBehaviour
         }
     }
 
-    public void DisableActiveColor()
+    public void SecondaryDisableActiveColor()
     {
         foreach (Image i in images)
         {
