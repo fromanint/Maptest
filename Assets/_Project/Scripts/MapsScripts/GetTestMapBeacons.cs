@@ -1,71 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ARLocation;
+using Mapbox.Unity.Utilities;
+using Mapbox.Utils;
 using Mapbox.Unity.Map;
 using ARLocation.MapboxRoutes.SampleProject;
-
 public class GetTestMapBeacons : MonoBehaviour
 {
 
-    public AbstractMap _map;
+	[SerializeField]
+	AbstractMap _map;
 
-    public MapController mapController;
-    public Transform beaconsParent;
+	[SerializeField]
+	MapController mapController;
 
-    public UpdateBeaconLocation markerPrefab;
+	[SerializeField]
+	[Geocode]
+	string[] _locationStrings;
+	Vector2d[] _locations;
 
-    public List<UpdateBeaconLocation> markers;
+	[SerializeField]
+	float _spawnScale = 100f;
 
-    public List<Location> testCoordinates;
+	[SerializeField]
+	UpdateBeaconLocation _markerPrefab;
 
-    public int locationsNumber = 5;
+	List<UpdateBeaconLocation> _spawnedObjects;
 
-    public string providerStatusStarted = "Started";
+	void Start()
+	{
+		_locations = new Vector2d[_locationStrings.Length];
+		_spawnedObjects = new List<UpdateBeaconLocation>();
+		for (int i = 0; i < _locationStrings.Length; i++)
+		{
+			var locationString = _locationStrings[i];
+			_locations[i] = Conversions.StringToLatLon(locationString);
+			var instance = Instantiate(_markerPrefab);
+			instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
+			instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+			instance.location = _locations[i];
+			instance._map = _map;
+			instance.controller = mapController;
+			instance._spawnScale = _spawnScale;
+			_spawnedObjects.Add(instance);
+			
 
-    public float beaconsSize = 3f;
+		}
+	}
 
-
-    private ARLocationProvider locationProvider;
-    // Start is called before the first frame update
-    IEnumerator Start()
-    {
-
-        locationProvider = ARLocationProvider.Instance;
-
-        while (locationProvider.Provider.GetStatusString() != providerStatusStarted)
-            yield return null;
-        
-        for (int i = 0; i < locationsNumber; i++)
-        {
-            double Latitude = Random.Range(-1000, 1000);
-            double Longitude = Random.Range(-1000, 1000);
-            //double Latitude = rdn
-            Latitude = (Latitude / 100000)+ locationProvider.CurrentLocation.latitude;
-            Longitude = (Longitude / 100000) + locationProvider.CurrentLocation.longitude;
-
-
-            Location loc = new Location(Latitude, Longitude, +locationProvider.CurrentLocation.altitude);
-            testCoordinates.Add(loc);
-
-            UpdateBeaconLocation beacon = Instantiate(markerPrefab);
-            beacon.location.x = Latitude;
-            beacon.location.y = Longitude;
-            beacon.transform.parent = beaconsParent;
-            beacon._spawnScale = beaconsSize;
-            beacon.gameObject.name = "Beacon " + i;
-            beacon.controller = mapController;
-            beacon._map = _map;
-            
-
-        }
-
-        
-
-    }
-
+	private void Update()
+	{
+		
+	}
+}
    
 
 
 
-}
+

@@ -174,7 +174,7 @@ namespace ARLocation.MapboxRoutes.SampleProject
         public void StartRoute(Location dest)
         {
             s.destination = dest;
-
+            Debug.Log(dest);
             if (ARLocationProvider.Instance.IsEnabled)
             {
                 loadRoute(ARLocationProvider.Instance.CurrentLocation.ToLocation());

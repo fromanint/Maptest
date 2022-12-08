@@ -46,9 +46,11 @@ public class UpdateBeaconLocation : MonoBehaviour
         Location newLoc = new Location(location.x,location.y);
         //menuController.StartRoute(newLoc);
         controller.StartRoute(newLoc);
-            
+        //-24.508947000000003,-47.862959
+
+      
     }
 
 
-    
+
 }

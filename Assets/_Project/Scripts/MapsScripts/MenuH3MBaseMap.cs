@@ -238,6 +238,7 @@ namespace ARLocation.MapboxRoutes.SampleProject
             {
                 if (GUILayout.Button(r.place_name, new GUIStyle(buttonStyle()) { alignment = TextAnchor.MiddleLeft, fontSize = 24, fixedHeight = 0.05f * Screen.height }))
                 {
+                    Debug.Log(r.geometry.coordinates[0]);
                     StartRoute(r.geometry.coordinates[0]);
                 }
             }
